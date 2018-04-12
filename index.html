@@ -71,14 +71,25 @@
         </div>
       </div>
     </header>
-
+      <script>
+        var currentPrice = new XMLHttpRequest();
+        currentPrice.open('GET', 'https://blockdozer.com/insight-api/addr/1BcashBurnerSendHereToDiexxwUSRRz/utxo', true);
+        currentPrice.onreadystatechange = function(){
+          if(currentPrice.readyState == 4){
+            var ticker = JSON.parse(currentPrice.responseText);
+            var price = ticker.bids[0][0];
+            document.getElementById('burned').innerHTML = "$" + price;
+          };
+        };
+        currentPrice.send();
+      </script>
     <section class="bg-primary" id="about">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <h2 class="section-heading text-white">Json link to be used later</h2>
+            <h2 class="section-heading text-white">Total Bcash Burned:</h2>
             <hr class="light my-4">
-            <p class="text-faded mb-4">1BcashBurnerSendHereToDiexxwUSRRz https://blockdozer.com/insight-api/addr/1BcashBurnerSendHereToDiexxwUSRRz/utxo</p>
+            <p class="text-faded mb-4">  <div id="burned"></div></br>1BcashBurnerSendHereToDiexxwUSRRz </p>
             <a class="btn btn-light btn-xl js-scroll-trigger" href="#services">Get Started!</a>
           </div>
         </div>
@@ -89,7 +100,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading">At Your Service</h2>
+            <h2 class="section-heading">Got BCash?</h2>
             <hr class="my-4">
           </div>
         </div>
@@ -98,28 +109,28 @@
         <div class="row">
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-diamond text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Sturdy Templates</h3>
-              <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
+              <i class="fa fa-4x fa-tint text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">BCash Faucets</h3>
+              <p class="text-muted mb-0"><a href="http://getfree.co.in/bcash/?r=1BcashBurnerSendHereToDiexxwUSRRz">http://getfree.co.in</a></p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-paper-plane text-primary mb-3 sr-icons"></i>
-              <h3 class="mb-3">Ready to Ship</h3>
-              <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
+              <i class="fa fa-4x fa-exchange text-primary mb-3 sr-icons"></i>
+              <h3 class="mb-3">Trade for BCash</h3>
+              <p class="text-muted mb-0"><a href="https://www.binance.com/?ref=11855030">Binance</a></p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-newspaper-o text-primary mb-3 sr-icons"></i>
+              <i class="fa fa-4x fa-trash-o text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3">Up to Date</h3>
               <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
             </div>
           </div>
           <div class="col-lg-3 col-md-6 text-center">
             <div class="service-box mt-5 mx-auto">
-              <i class="fa fa-4x fa-heart text-primary mb-3 sr-icons"></i>
+              <i class="fa fa-4x fa-trash-o text-primary mb-3 sr-icons"></i>
               <h3 class="mb-3">Made with Love</h3>
               <p class="text-muted mb-0">You have to make your websites with love these days!</p>
             </div>
